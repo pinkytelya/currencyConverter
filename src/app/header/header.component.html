@@ -1,0 +1,15 @@
+<header>
+  <div class="flex justify-around items-center text-fontColor bg-customGreen h-24">
+    <img src="assets/images/svg-LOGO.svg" alt="currency-converter" height="145" width="145">
+    <div class="font-bold flex items-center flex-col">
+      <div class="flex items-center">
+        <span class="flag-icon flag-icon-us mr-2"></span>
+        <span>1 USD = {{ usdRate | number:'1.2-2' }} UAH</span>
+      </div>
+      <div class="flex items-center mt-2">
+        <span class="flag-icon flag-icon-eu mr-2"></span>
+        <span>1 EUR = {{ eurRate | number:'1.2-2' }} UAH</span>
+      </div>
+    </div>
+  </div>
+</header>

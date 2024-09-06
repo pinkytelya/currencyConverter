@@ -1,0 +1,31 @@
+<div class="flex justify-center items-center">
+  <div class="flex justify-between">
+    <div class="mr-2">
+      <p class="text-customGreen">Amount</p>
+      <div class="relative mt-2 rounded-md shadow-sm">
+        <input class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-customGreen ring-inset ring-green-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-700 sm:text-sm sm:leading-6"
+               type="number" [(ngModel)]="toAmount" (input)="convertCurrency('to')" />
+        <div class="absolute inset-y-0 right-0 flex items-center">
+          <span class="mr-2" [ngClass]="'flag-icon ' + getFlagClass(toCurrency)"></span>
+          <select class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-800 sm:text-sm"
+                  [(ngModel)]="toCurrency" (change)="convertCurrency('to')">
+            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-customGreen">Converted to</p>
+      <div class="relative mt-2 rounded-md shadow-sm">
+        <input class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-customGreen ring-inset ring-green-800 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-700 sm:text-sm sm:leading-6"
+               type="number" [(ngModel)]="fromAmount" (input)="convertCurrency('from')" />
+        <div class="absolute inset-y-0 right-0 flex items-center">
+          <span class="mr-2" [ngClass]="'flag-icon ' + getFlagClass(fromCurrency)"></span>
+          <select class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-800 sm:text-sm"
+                  [(ngModel)]="fromCurrency" (change)="convertCurrency('from')">
+            <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+          </select>
+        </div>
+      </div>
+
